@@ -3,6 +3,8 @@ import { Component } from "react";
 import "./Navbarstyle.css";
 import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
+  
+
 
 class Navbar extends Component {
   state = { clicked: false , selected:'Home'};

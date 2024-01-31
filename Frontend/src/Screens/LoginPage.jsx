@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider, db } from "../firebase";
-import { collection, addDoc, doc, setDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc, getDoc } from "firebase/firestore";
 import InputControl from "../InputControl/InputControl";
 import styles from "./Login.module.css";
 import Cookies from "universal-cookie";
@@ -39,7 +39,16 @@ function Login() {
 
         const channelRef = await addDoc(collection(db, "users"), userData);
 
-        navigate("/home");
+        const userDocRef = doc(db, "users", user.displayName);
+
+        // Check if the user document already exists
+        const userDocSnapshot = await getDoc(userDocRef);
+
+        if (userDocSnapshot.coreValue.exists()) {
+          navigate("/home");
+        } else {
+          navigate("/registration");
+        }
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
@@ -61,10 +70,19 @@ function Login() {
         email: user.email,
       };
 
-      await setDoc(doc(db, "users", user.displayName), {
+      await setDoc(doc(db, "users", user.email), {
         userData,
       });
-      navigate("/home");
+      const userDocRef = doc(db, "users", user.displayName);
+
+      // Check if the user document already exists
+      const userDocSnapshot = await getDoc(userDocRef);
+
+      if (userDocSnapshot.coreValue) {
+        navigate("/home");
+      } else {
+        navigate("/registration");
+      }
     } catch (err) {
       console.error(err);
     }

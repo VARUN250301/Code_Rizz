@@ -55,6 +55,12 @@ export const MenuItems = [
     url: "/learn",
     cName: "nav-links",
     icon: "fa-solid fa-info-dollar",
+  },
 
-  }
+  {
+    title: "Learn",
+    url: "/CSRComplianceEducation",
+    cName: "nav-links",
+    icon: "fa-solid fa-info-dollar",
+  },
 ];

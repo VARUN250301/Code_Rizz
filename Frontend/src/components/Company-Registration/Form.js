@@ -117,6 +117,39 @@ const CompanyRegistrationForm = () => {
             />
             <label htmlFor="finance">Finance</label>
           </div>
+          <div>
+            <input
+              type="checkbox"
+              id="health"
+              name="areasOfInterest"
+              value="health"
+              checked={formData.areasOfInterest.includes("health")}
+              onChange={handleInterestChange}
+            />
+            <label htmlFor="technology">health</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="education"
+              name="areasOfInterest"
+              value="education"
+              checked={formData.areasOfInterest.includes("education")}
+              onChange={handleInterestChange}
+            />
+            <label htmlFor="education">education</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id=""
+              name="areasOfInterest"
+              value=""
+              checked={formData.areasOfInterest.includes("")}
+              onChange={handleInterestChange}
+            />
+            <label htmlFor=""></label>
+          </div>
           {/* Add more areas of interest as needed */}
         </div>
 

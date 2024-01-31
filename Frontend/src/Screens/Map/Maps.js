@@ -73,7 +73,7 @@ const NGOList = () => {
   return (
     <div>
       <div style={{ position: "relative" }}>
-        <div style={{ zIndex: "-1", position: "absolute" }}>
+        <div style={{ zIndex: "-1"}}>
           <UserLocation />
         </div>
 

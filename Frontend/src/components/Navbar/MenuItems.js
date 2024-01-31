@@ -45,7 +45,14 @@ export const MenuItems = [
   },
   {
     title: "About Us",
-    url: "/aboutus",
+    url: "/AboutUs",
+    cName: "nav-links",
+    icon: "fa-solid fa-info-dollar",
+
+  },
+  {
+    title: "Learn More",
+    url: "/learn",
     cName: "nav-links",
     icon: "fa-solid fa-info-dollar",
 

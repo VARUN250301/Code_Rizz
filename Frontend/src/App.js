@@ -18,7 +18,7 @@ import UserLocation from "./Screens/Map/UserLocation";
 import AnnouncementForm from "./Screens/Channel/AnnouncementForm";
 import AnnouncementList from "./Screens/Channel/AnnouncementList";
 import AboutUs from "./Screens/AboutUs/AboutUs";
-
+import  CSRComplianceEducation from "./Screens/Learn/CSRComplianceEducation";
 
 import Form from "./components/Company-Registration/Form";
 import CompanyDashboard from "./components/CompanyDashboard/HomeDashboard";
@@ -79,6 +79,7 @@ function App() {
           <Route exact path="/rewards" element={<RewardPage />} />
           <Route exact path="/maps" element={<Map />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
+          <Route exact path="/learn" element={<CSRComplianceEducation />} />
           <Route exact path="/registration" element={<Form />} />
           <Route exact path="/cd" element={<CompanyDashboard />} />
           <Route

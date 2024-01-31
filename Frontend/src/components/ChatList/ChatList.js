@@ -14,7 +14,7 @@ import {
 import { db } from "../../firebase";
 import { useAuthListener } from "../../Screens/Home/CurrentUser";
 
-const ChatList = ({ data, setChatClicked }) => {
+const ChatList = ({ data, setChatClicked, setRoom }) => {
   const user = useAuthListener();
   const [community, setCommunity] = useState([]);
 
@@ -23,58 +23,45 @@ const ChatList = ({ data, setChatClicked }) => {
     const unsubscribe = onSnapshot(ref, (querySnapshot) => {
       const announcementsData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data(),
+        ...doc.data().communityData,
       }));
       setCommunity(announcementsData);
     });
 
-    return () => unsubscribe();
-  }, []);
+    // return () => unsubscribe();
+  }, [user]);
+  console.log(community);
 
+  function abc(agency) {
+    setChatClicked(agency.name);
+    setRoom(agency.uid);
+  }
   return (
-    <div className={styles.list}>
+    <div className={styles.list} style={{ marginTop: " -4%" }}>
       <div className={styles.header}></div>
 
-      {community?.map((agency) => {
-        return (
-          <ListGroup
-            as="ol"
-            className="bg-purple"
-            //  key={agency.name}
-            onClick={() => setChatClicked(agency.name)}
+      <ListGroup as="ol" className="bg-purple">
+        {community.map((agency) => (
+          <ListGroup.Item
+            key={agency.id}
+            className="d-flex justify-content-between align-items-start mx-2 mt-2"
+            as="li"
+            color="#CBC3E3"
+            onClick={() => abc(agency)}
           >
-            <ListGroup.Item
-              className="d-flex justify-content-between align-items-start mx-2 mt-2"
-              as="li"
-              color="#CBC3E3"
-            >
-              <div>
-                <Avatar className="ml-5 mr-5" src={"../images/logo.png"} />
-              </div>
-              <div className="ms-2 me-auto">
-                <div className="fw-bold ">{agency.name}</div>
-              </div>
-              <Badge bg="primary" pill>
-                14
-              </Badge>
-            </ListGroup.Item>
-          </ListGroup>
-          // <div
-          //   className={styles.listItem}
-          //   onClick={() => setChatClicked(agency.name)}
-          // >
-          //   <div>
-          //     <Avatar className="ml-5 mr-5" src={"../images/logo.png"} />
-          //   </div>
-
-          //   <div>
-          //     <p>{agency.name}</p>
-          //   </div>
-          // </div>
-        );
-      })}
+            <div>
+              <Avatar className="ml-5 mr-5" src={"../images/logo.png"} />
+            </div>
+            <div className="ms-2 me-auto">
+              <div className="fw-bold ">{agency.name}</div>
+            </div>
+            <Badge bg="primary" pill>
+              14
+            </Badge>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
     </div>
   );
 };
-
 export default ChatList;

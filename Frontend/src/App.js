@@ -14,6 +14,7 @@ import Profile from "./Screens/Profile/Profile";
 import RewardPage from "./Screens/Rewards/reward";
 import Home2 from "./Screens/Home/Home2";
 import Map from "./Screens/Map/Maps";
+import UserLocation from "./Screens/Map/UserLocation";
 import AnnouncementForm from "./Screens/Channel/AnnouncementForm";
 import AnnouncementList from "./Screens/Channel/AnnouncementList";
 import AboutUs from "./Screens/AboutUs/AboutUs";
@@ -70,6 +71,7 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/home" element={<Home2 />} />
 
+          <Route exact path="/location" element={<UserLocation />} />
           <Route exact path="/register" element={<RegistrationForm />} />
           <Route exact path="/chat" element={<Chat />} />
           <Route exact path="/donation" element={<Donation />} />

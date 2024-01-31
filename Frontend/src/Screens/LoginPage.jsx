@@ -49,20 +49,22 @@ function Login() {
 
   const signInWithGoogle = async () => {
     try {
-      const result = await signInWithPopup(auth, provider).then(async (res) => {
-        // console.log(result.user);
-        // localStorage.setItem("userId", result.user.uid);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log(user);
+      // console.log(result.user);
+      // localStorage.setItem("userId", result.user.uid);
 
-        const user = res.user;
-        console.log(user);
-        const userData = {
-          uid: user.uid,
-          email: values.email,
-        };
+      console.log(user);
+      const userData = {
+        uid: user.uid,
+        email: user.email,
+      };
 
-        const channelRef = await addDoc(collection(db, "users"), userData);
-        navigate("/home");
+      await setDoc(doc(db, "users", user.displayName), {
+        userData,
       });
+      navigate("/home");
     } catch (err) {
       console.error(err);
     }

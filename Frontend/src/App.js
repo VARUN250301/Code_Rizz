@@ -19,6 +19,8 @@ import AnnouncementList from "./Screens/Channel/AnnouncementList";
 import AboutUs from "./Screens/AboutUs/AboutUs";
 
 
+import Form from "./components/Company-Registration/Form";
+
 function App() {
   const PrivateRoute = ({ element: Element, ...rest }) => {
     // Using 'element' instead of 'component' in v6
@@ -74,7 +76,7 @@ function App() {
           <Route exact path="/rewards" element={<RewardPage />} />
           <Route exact path="/maps" element={<Map />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
-
+          <Route exact path="/registration" element={<Form />} />
           <Route
             exact
             path="/channel"

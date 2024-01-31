@@ -23,6 +23,12 @@ export const MenuItems = [
     cName: "nav-links",
     icon: "fa-solid fa-user",
   },
+  {
+    title: "Dashboard",
+    url: "/cd",
+    cName: "nav-links",
+    icon: "fa-solid fa-user"
+  },
 
   {
     title: "Reward",

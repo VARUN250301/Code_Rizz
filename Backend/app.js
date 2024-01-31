@@ -128,7 +128,7 @@ const Comment = require("./model/comments");
 
 
 const Company = require("./model/company");
-const CSR = require("./model/csr");
+
 
 app.post("/register1", async (req, res) => {
   try{
@@ -141,6 +141,47 @@ app.post("/register1", async (req, res) => {
     res.status(500).send("Something went wrong");
   }
 });
+
+const csrInitiatives = require("./model/initiatives");
+
+
+app.post("/csr/initiatives", async (req, res) => {
+  try{
+    const { type, name, about, metric, potenitalImpactMetric, successStory, tags, email} = req.body;
+    const initiatives = await csrInitiatives.create({ type, name, about, metric, potenitalImpactMetric, successStory, sectors:tags, email });
+    res.status(201).json(initiatives);
+  
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Something went wrong");
+  }
+}
+);
+
+app.post("/csr/owninitiatives/", async (req, res) => {
+  const { email } = req.body;
+  try {
+    const initiatives = await csrInitiatives.find({
+        email: email,
+    });
+    res.status(200).json(initiatives);
+  } catch (error) {
+    res.status(500).send("Something went wrong");
+  }
+}
+);
+
+
+app.get("/csr/initiatives", async (req, res) => {
+  try {
+    const initiatives = await csrInitiatives.find({});
+    res.status(200).json(initiatives);
+  } catch (error) {
+    res.status(500).send("Something went wrong");
+  }
+}
+);
+
 
 module.exports = app;
 

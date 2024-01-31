@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-// import { getJobs } from "../utils/backend";
+import { getInitiatives } from "../utils/backend";
 import { useNavigate } from "react-router";
 
 export default function Home() {
-  const [jobs, setJobs] = useState([]);
+  const [initiative, setInitiative] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchJobs = async () => {
     
+      const res = await getInitiatives(localStorage.getItem("email"));
+      console.log(res);
       console.log("fetching jobs");
-      setJobs(res);
+      setInitiative(res);
     };
 
     fetchJobs();
@@ -22,7 +24,7 @@ export default function Home() {
       <Navbar />
 
       <div className="grid grid-cols-2 gap-10 py-10 px-48">
-        {jobs.map((job) => (
+        {initiative.map((init) => (
           <button
             onClick={() => {
               navigate(`/job`, {
@@ -33,36 +35,36 @@ export default function Home() {
           >
             <div className="col-span-11 flex flex-col px-10 text-left">
               <h3 aria-label="Company Name" className="text-sm text-gray-600">
-                {job.company}
+                {init.type}
               </h3>
               <a
                 aria-label="Job Position"
                 className="mb-3 overflow-hidden pr-7 text-lg font-semibold sm:text-xl"
               >
-                {job.position}
+                {init.name}
               </a>
               <p
                 aria-label="Job Description"
                 className="overflow-hidden pr-7 text-sm"
               >
-                {job.desc.slice(0, 200)}...
+                {init.about.slice(0, 200)}...
               </p>
               <div className="mt-3 flex flex-col space-x-2 space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
                 <div className>
                   Location:
                   <span className=" rounded-full bg-green-100 px-2 py-0.5 text-green-900">
-                    {job.location}
+                    {/* {jiob.location} */}
                   </span>
                 </div>
-                <div className>
+                {/* <div className>
                   Date:
                   <span className="rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">
-                    {job.date}
+                    {init.matric}
                   </span>
-                </div>
+                </div> */}
                 <div className="flex space-x-1">
                   Tags:
-                  {job.tags.map((tag) => (
+                  {init.sectors.map((tag) => (
                     <span className="rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">
                       <span className="mr-1">{tag}</span>
                     </span>

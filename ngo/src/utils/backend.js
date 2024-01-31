@@ -19,7 +19,7 @@ export async function createJob(position, location, date, tags, desc) {
   }
 }
 
-export async function createInitiative(type, name, about, metric, potenitalImpactMetric, successStory, sectors,tags, email) {
+export async function createInitiative(type, name, about, metric, potenitalImpactMetric, successStory, sectors,tags, email, location) {
   try {
     const res = await axios.post("/csr/initiatives", {
       type,

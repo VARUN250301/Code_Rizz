@@ -23,7 +23,7 @@ export default function Create() {
   const [successStory, setSuccessStory] = useState("");
   const [sectors, setSectors] = useState([]);
 
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState("");
   const navigate = useNavigate();
 
   const [tags, setTags] = useState([]);
@@ -169,9 +169,16 @@ export default function Create() {
 
               <div className="sm:col-span-2">
                 <p className="text-gray-900"> Location:</p>
-                <select className=" bg-gray-100 p-  2"  onChange={(e) => setLocation(e.target.value)}>
+                <select className=" bg-gray-100 p-2"  onChange={
+                  (e)=>{
+                    setLocation(e.target.value.toString())
+                   
+                    console.log(e.target.value)
+                  }
+                 
+                }>
                   {cities.map((city) => (
-                    <option value={city}>{city}</option>
+                    <option  value={city}>{city}</option>
                   ))}
                 </select>
               </div>

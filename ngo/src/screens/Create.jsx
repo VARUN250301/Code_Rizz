@@ -4,12 +4,14 @@ import { createInitiative, createJob } from "../utils/backend";
 import { useNavigate } from "react-router-dom";
 import { skills } from "../utils/skills";
 const data = {
-  "Type": "Cost efficiency",
-  "Name": "Digital India Campaign",
-  "About": "Promotes digital transactions and reduces paperwork, enhancing cost efficiency.",
-  "Metrics": "Percentage increase in digital transactions",
-  "PotentialImpactMetric": "A 25% increase in digital transactions",
-  "SuccessStory": "Digital India Campaign's efforts led to a substantial increase in digital transactions, enhancing cost efficiency."
+  Type: "Cost efficiency",
+  Name: "Digital India Campaign",
+  About:
+    "Promotes digital transactions and reduces paperwork, enhancing cost efficiency.",
+  Metrics: "Percentage increase in digital transactions",
+  PotentialImpactMetric: "A 25% increase in digital transactions",
+  SuccessStory:
+    "Digital India Campaign's efforts led to a substantial increase in digital transactions, enhancing cost efficiency.",
 };
 
 export default function Create() {
@@ -28,7 +30,18 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await  createInitiative(type, name, about, metric, potentialImpactMetric, successStory, sectors,tags, localStorage.getItem("email"));
+    const res = await createInitiative(
+      type,
+      name,
+      about,
+      metric,
+      potentialImpactMetric,
+      successStory,
+      sectors,
+      tags,
+      localStorage.getItem("email"),
+      location
+    );
 
     // navigate("/");
 
@@ -73,7 +86,7 @@ export default function Create() {
                 />
               </div>
 
-              <div className="sm:col-span-2"> 
+              <div className="sm:col-span-2">
                 <label
                   htmlFor="category"
                   className="block mb-2 text-sm font-medium text-gray-900"
@@ -154,7 +167,16 @@ export default function Create() {
                 />
               </div>
 
-              <div className="flex items-center space-x-2 flex-row">
+              <div className="sm:col-span-2">
+                <p className="text-gray-900"> Location:</p>
+                <select className=" bg-gray-100 p-  2"  onChange={(e) => setLocation(e.target.value)}>
+                  {cities.map((city) => (
+                    <option value={city}>{city}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="sm:col-span-2">
                 <p className="text-gray-900"> Sectors:</p>
 
                 {skills.map((skill) => (
@@ -176,26 +198,15 @@ export default function Create() {
                     </label>
                     &nbsp;&nbsp;
                   </>
-                ))  
-                }
-               
-                
-
+                ))}
               </div>
-              <div className="flex items-center space-x-2 flex-row">
-                <p className="text-gray-900"> Locations:</p>
-                    
-                </div>
-            </div>
-            <div className="flex content-center pl-10">
 
-            
-            <button
-              type="submit"
-              className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-600 rounded-lg focus:ring-4 focus:ring-primary-200 "
-            >
-              Create CSR Initiative
-            </button>
+              <button
+                type="submit"
+                className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-600 rounded-lg focus:ring-4 focus:ring-primary-200 "
+              >
+                Create CSR Initiative
+              </button>
             </div>
           </form>
         </div>
@@ -203,3 +214,30 @@ export default function Create() {
     </div>
   );
 }
+
+const cities = [
+  "Mumbai",
+  "Pune",
+  "Delhi",
+  "Bangalore",
+  "Hyderabad",
+  "Ahmedabad",
+  "Chennai",
+  "Kolkata",
+  "Surat",
+  "Jaipur",
+  "Lucknow",
+  "Kanpur",
+  "Nagpur",
+  "Indore",
+  "Thane",
+  "Bhopal",
+  "Visakhapatnam",
+  "Pimpri-Chinchwad",
+  "Patna",
+  "Vadodara",
+  "Ghaziabad",
+  "Ludhiana",
+  "Agra",
+  "Nashik"
+];

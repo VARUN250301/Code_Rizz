@@ -31,6 +31,7 @@ export async function createInitiative(type, name, about, metric, potenitalImpac
       sectors,
       tags,
       email,
+      location 
     });
     return res.data;
   } catch (error) {

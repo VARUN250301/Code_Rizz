@@ -21,6 +21,7 @@ import AboutUs from "./Screens/AboutUs/AboutUs";
 
 
 import Form from "./components/Company-Registration/Form";
+import CompanyDashboard from "./components/CompanyDashboard/HomeDashboard";
 
 function App() {
   const PrivateRoute = ({ element: Element, ...rest }) => {
@@ -79,6 +80,7 @@ function App() {
           <Route exact path="/maps" element={<Map />} />
           <Route exact path="/AboutUs" element={<AboutUs />} />
           <Route exact path="/registration" element={<Form />} />
+          <Route exact path="/cd" element={<CompanyDashboard />} />
           <Route
             exact
             path="/channel"

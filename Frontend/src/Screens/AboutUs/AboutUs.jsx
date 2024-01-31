@@ -13,6 +13,26 @@ const AboutUs = () => {
 
   return (
     <div>
+      <div className="navbar">
+        <a href="#">Improved Customer Loyalty</a>
+        <a href="#">Community Development</a>
+        <a href="#">Economic</a>
+        <a href="#">Philanthropic</a>
+        <a href="#">Charitable Giving</a>
+        <a href="#">Cost Efficiency</a>
+        <a href="#">Employee Retention Rates</a>
+        <a href="#">Engage Stakeholders</a>
+        <a href="#">Fair Business Practices</a>
+        <a href="#">Improving Labor Policies</a>
+        <a href="#">Innovation</a>
+        <a href="#">Legal Responsibility</a>
+        <a href="#">Reducing Carbon Footprints</a>
+        <a href="#">Set Measurable Goals</a>
+        <a href="#">Employee Benefits</a>
+        <a href="#">Employee Volunteering</a>
+        <a href="#">Socially and Environmentally Conscious Investments</a>
+      </div>
+
       <div className="collapsible" onClick={() => toggleContent('customerLoyalty')}>Improved Customer Loyalty</div>
       <div className="content" id="customerLoyalty">
         <p>Enhances customer experience through the digitization of services and processes.</p>
@@ -45,7 +65,111 @@ const AboutUs = () => {
         <p>Success Story: XYZ Corporation witnessed a 12% increase in funds allocated to philanthropic initiatives.</p>
       </div>
 
-      {/* Repeat the above structure for other topics */}
+      <div className="collapsible" onClick={() => toggleContent('charitableGiving')}>Charitable Giving</div>
+      <div className="content" id="charitableGiving">
+        <p>Accepts voluntary donations for providing immediate relief to those in distress.</p>
+        <p>Metrics: Percentage increase in charitable donations</p>
+        <p>Potential Impact: A 10% increase in charitable donations</p>
+        <p>Success Story: Prime Minister's National Relief Fund witnessed a 10% rise in charitable contributions.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('costEfficiency')}>Cost Efficiency</div>
+      <div className="content" id="costEfficiency">
+        <p>Promotes digital transactions and reduces paperwork, enhancing cost efficiency.</p>
+        <p>Metrics: Percentage improvement in cost efficiency</p>
+        <p>Potential Impact: A 15% improvement in overall cost efficiency</p>
+        <p>Success Story: Digital India Campaign led to a 15% improvement in overall cost efficiency.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('employeeRetentionRates')}>Employee Retention Rates</div>
+      <div className="content" id="employeeRetentionRates">
+        <p>Provides a savings platform for employees, contributing to their long-term financial stability.</p>
+        <p>Metrics: Percentage increase in employee retention rates</p>
+        <p>Potential Impact: A 12% increase in employee retention rates</p>
+        <p>Success Story: Employee Provident Fund resulted in a 12% increase in employee retention rates.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('engageStakeholders')}>Engage Stakeholders</div>
+      <div className="content" id="engageStakeholders">
+        <p>Involves various stakeholders, including banks, to ensure financial inclusion.</p>
+        <p>Metrics: Percentage increase in stakeholder engagement</p>
+        <p>Potential Impact: A 10% increase in stakeholder engagement</p>
+        <p>Success Story: Pradhan Mantri Jan Dhan Yojana witnessed a 10% rise in stakeholder engagement.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('fairBusinessPractices')}>Fair Business Practices</div>
+      <div className="content" id="fairBusinessPractices">
+        <p>Ensures fair competition in the market and prevents anti-competitive practices.</p>
+        <p>Metrics: Percentage improvement in adherence to fair business practices</p>
+        <p>Potential Impact: A 15% improvement in adherence to fair business practices</p>
+        <p>Success Story: Competition Commission of India contributed to a 15% improvement in fair business practices.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('improvingLaborPolicies')}>Improving Labor Policies</div>
+      <div className="content" id="improvingLaborPolicies">
+        <p>A pension scheme for unorganized sector workers, improving social security for laborers.</p>
+        <p>Metrics: Percentage improvement in labor policies</p>
+        <p>Potential Impact: A 12% improvement in labor policies</p>
+        <p>Success Story: Pradhan Mantri Shram Yogi Maan-dhan led to a 12% improvement in labor policies.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('innovation')}>Innovation</div>
+      <div className="content" id="innovation">
+        <p>Promotes grassroots innovations and supports inventors and innovators.</p>
+        <p>Metrics: Percentage increase in innovative solutions</p>
+        <p>Potential Impact: A 15% increase in the adoption of innovative solutions</p>
+        <p>Success Story: National Innovation Foundation contributed to a 15% increase in the adoption of innovative solutions.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('legalResponsibility')}>Legal Responsibility</div>
+      <div className="content" id="legalResponsibility">
+        <p>Mandates companies to allocate a portion of profits for social and environmental initiatives.</p>
+        <p>Metrics: Percentage compliance with legal responsibilities</p>
+        <p>Potential Impact: A 10% improvement in compliance with legal responsibilities</p>
+        <p>Success Story: Corporate Social Responsibility Compliance witnessed a 10% improvement in legal responsibility compliance.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('reducingCarbonFootprints')}>Reducing Carbon Footprints</div>
+      <div className="content" id="reducingCarbonFootprints">
+        <p>A comprehensive strategy to address climate change, including initiatives to reduce carbon emissions.</p>
+        <p>Metrics: Percentage reduction in carbon emissions</p>
+        <p>Potential Impact: A 20% reduction in carbon emissions</p>
+        <p>Success Story: National Action Plan on Climate Change resulted in a 20% reduction in carbon emissions.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('setMeasurableGoals')}>Set Measurable Goals</div>
+      <div className="content" id="setMeasurableGoals">
+        <p>India has committed to achieving the UN SDGs, providing a framework for measurable goals.</p>
+        <p>Metrics: Percentage achievement of set goals</p>
+        <p>Potential Impact: A 25% achievement of set goals</p>
+        <p>Success Story: Sustainable Development Goals witnessed a 25% achievement of set goals.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('employeeBenefits')}>Employee Benefits</div>
+      <div className="content" id="employeeBenefits">
+        <p>Provides a retirement benefit to employees, ensuring financial security.</p>
+        <p>Metrics: Percentage improvement in employee benefits</p>
+        <p>Potential Impact: A 12% improvement in overall employee benefits</p>
+        <p>Success Story: Employee Provident Fund resulted in a 12% improvement in overall employee benefits.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('employeeVolunteering')}>Employee Volunteering</div>
+      <div className="content" id="employeeVolunteering">
+        <p>Encourage employees to volunteer for social and community development activities.</p>
+        <p>Metrics: Percentage increase in employee volunteering hours</p>
+        <p>Potential Impact: A 15% increase in employee volunteering hours</p>
+        <p>Success Story: CSR Programs witnessed a 15% increase in employee volunteering hours.</p>
+      </div>
+
+      <div className="collapsible" onClick={() => toggleContent('sociallyEnvironmentallyConsciousInvestments')}>
+        Socially and Environmentally Conscious Investments
+      </div>
+      <div className="content" id="sociallyEnvironmentallyConsciousInvestments">
+        <p>Investment in bonds that finance environmentally friendly projects.</p>
+        <p>Metrics: Percentage increase in socially and environmentally conscious investments</p>
+        <p>Potential Impact: A 20% increase in socially and environmentally conscious investments</p>
+        <p>Success Story: Green Bonds witnessed a 20% increase in socially and environmentally conscious investments.</p>
+      </div>
 
     </div>
   );

@@ -12,7 +12,7 @@ export const MenuItems = [
     icon: "fa-solid fa-user-group",
   },
   {
-    title: "Donate",
+    title: "NGOs",
     url: "/donation",
     cName: "nav-links",
     icon: "fa-solid fa-hand-holding-medical",
@@ -36,5 +36,5 @@ export const MenuItems = [
     url: "/maps",
     cName: "nav-links",
     icon: "fa-solid fa-sack-dollar",
-  },
+  }
 ];

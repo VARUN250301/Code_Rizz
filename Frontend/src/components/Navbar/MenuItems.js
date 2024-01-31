@@ -36,5 +36,12 @@ export const MenuItems = [
     url: "/maps",
     cName: "nav-links",
     icon: "fa-solid fa-sack-dollar",
+  },
+  {
+    title: "About Us",
+    url: "/aboutus",
+    cName: "nav-links",
+    icon: "fa-solid fa-info-dollar",
+
   }
 ];

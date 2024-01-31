@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 const AboutUs = () => {
   const toggleContent = (sectionId) => {
@@ -22,7 +23,10 @@ const AboutUs = () => {
   };
 
   return (
-    <div>
+    <div className=''>
+    <Navbar />
+ <div className='pl-10' style={{paddingLeft:"250px"}}>
+    
       <div className="navbar">
         <a href="#" onClick={() => handleNavbarClick('customerLoyalty')}>Improved Customer Loyalty</a>
         <a href="#" onClick={() => handleNavbarClick('communityDevelopment')}>Community Development</a>
@@ -181,7 +185,7 @@ const AboutUs = () => {
         <p>Potential Impact: A 20% increase in socially and environmentally conscious investments</p>
         <p>Success Story: Green Bonds witnessed a 20% increase in socially and environmentally conscious investments.</p>
       </div>
-
+</div>
     </div>
   );
 };

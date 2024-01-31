@@ -11,28 +11,39 @@ const AboutUs = () => {
     }
   };
 
+  const handleNavbarClick = (sectionId) => {
+    // Close all open content sections
+    document.querySelectorAll('.content').forEach((content) => {
+      content.style.display = 'none';
+    });
+
+    // Open the clicked section
+    toggleContent(sectionId);
+  };
+
   return (
     <div>
       <div className="navbar">
-        <a href="#">Improved Customer Loyalty</a>
-        <a href="#">Community Development</a>
-        <a href="#">Economic</a>
-        <a href="#">Philanthropic</a>
-        <a href="#">Charitable Giving</a>
-        <a href="#">Cost Efficiency</a>
-        <a href="#">Employee Retention Rates</a>
-        <a href="#">Engage Stakeholders</a>
-        <a href="#">Fair Business Practices</a>
-        <a href="#">Improving Labor Policies</a>
-        <a href="#">Innovation</a>
-        <a href="#">Legal Responsibility</a>
-        <a href="#">Reducing Carbon Footprints</a>
-        <a href="#">Set Measurable Goals</a>
-        <a href="#">Employee Benefits</a>
-        <a href="#">Employee Volunteering</a>
-        <a href="#">Socially and Environmentally Conscious Investments</a>
+        <a href="#" onClick={() => handleNavbarClick('customerLoyalty')}>Improved Customer Loyalty</a>
+        <a href="#" onClick={() => handleNavbarClick('communityDevelopment')}>Community Development</a>
+        <a href="#" onClick={() => handleNavbarClick('economic')}>Economic</a>
+        <a href="#" onClick={() => handleNavbarClick('philanthropic')}>Philanthropic</a>
+        <a href="#" onClick={() => handleNavbarClick('charitableGiving')}>Charitable Giving</a>
+        <a href="#" onClick={() => handleNavbarClick('costEfficiency')}>Cost Efficiency</a>
+        <a href="#" onClick={() => handleNavbarClick('employeeRetentionRates')}>Employee Retention Rates</a>
+        <a href="#" onClick={() => handleNavbarClick('engageStakeholders')}>Engage Stakeholders</a>
+        <a href="#" onClick={() => handleNavbarClick('fairBusinessPractices')}>Fair Business Practices</a>
+        <a href="#" onClick={() => handleNavbarClick('improvingLaborPolicies')}>Improving Labor Policies</a>
+        <a href="#" onClick={() => handleNavbarClick('innovation')}>Innovation</a>
+        <a href="#" onClick={() => handleNavbarClick('legalResponsibility')}>Legal Responsibility</a>
+        <a href="#" onClick={() => handleNavbarClick('reducingCarbonFootprints')}>Reducing Carbon Footprints</a>
+        <a href="#" onClick={() => handleNavbarClick('setMeasurableGoals')}>Set Measurable Goals</a>
+        <a href="#" onClick={() => handleNavbarClick('employeeBenefits')}>Employee Benefits</a>
+        <a href="#" onClick={() => handleNavbarClick('employeeVolunteering')}>Employee Volunteering</a>
+        <a href="#" onClick={() => handleNavbarClick('sociallyEnvironmentallyConsciousInvestments')}>Socially and Environmentally Conscious Investments</a>
       </div>
 
+      {/* Content Sections */}
       <div className="collapsible" onClick={() => toggleContent('customerLoyalty')}>Improved Customer Loyalty</div>
       <div className="content" id="customerLoyalty">
         <p>Enhances customer experience through the digitization of services and processes.</p>

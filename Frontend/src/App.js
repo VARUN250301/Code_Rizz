@@ -17,7 +17,7 @@ import Map from "./Screens/Map/Maps";
 import UserLocation from "./Screens/Map/UserLocation";
 import AnnouncementForm from "./Screens/Channel/AnnouncementForm";
 import AnnouncementList from "./Screens/Channel/AnnouncementList";
-import AboutUs from "./Screens/AboutUs/AboutUs";
+import AboutUs from "./Screens/Aboutus/AboutUs";
 import  CSRComplianceEducation from "./Screens/Learn/CSRComplianceEducation";
 
 import Form from "./components/Company-Registration/Form";

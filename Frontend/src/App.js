@@ -16,6 +16,8 @@ import Home2 from "./Screens/Home/Home2";
 import Map from "./Screens/Map/Maps";
 import AnnouncementForm from "./Screens/Channel/AnnouncementForm";
 import AnnouncementList from "./Screens/Channel/AnnouncementList";
+import AboutUs from "./Screens/AboutUs/AboutUs";
+
 
 function App() {
   const PrivateRoute = ({ element: Element, ...rest }) => {
@@ -71,6 +73,8 @@ function App() {
           <Route exact path="/donation" element={<Donation />} />
           <Route exact path="/rewards" element={<RewardPage />} />
           <Route exact path="/maps" element={<Map />} />
+          <Route exact path="/AboutUs" element={<AboutUs />} />
+
           <Route
             exact
             path="/channel"

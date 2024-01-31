@@ -1,2 +1,2 @@
-# Code_Rizz
+# Code_Rizzz
 Tsec Code Cell Hackathon

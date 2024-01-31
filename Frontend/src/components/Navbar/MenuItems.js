@@ -31,14 +31,14 @@ export const MenuItems = [
   },
 
   {
-    title: "Reward",
+    title: "Track your Process",
     url: "/rewards",
     cName: "nav-links",
     icon: "fa-solid fa-sack-dollar",
   },
 
   {
-    title: "Map",
+    title: "Find Through Map",
     url: "/maps",
     cName: "nav-links",
     icon: "fa-solid fa-sack-dollar",
@@ -53,13 +53,6 @@ export const MenuItems = [
   {
     title: "Learn More",
     url: "/learn",
-    cName: "nav-links",
-    icon: "fa-solid fa-info-dollar",
-  },
-
-  {
-    title: "Learn",
-    url: "/CSRComplianceEducation",
     cName: "nav-links",
     icon: "fa-solid fa-info-dollar",
   },

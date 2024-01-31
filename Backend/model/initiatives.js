@@ -28,9 +28,9 @@ const csrInitiatives = new mongoose.Schema({
     email : {
         type : String
     },
-     location : {
-       type: [String]
-     }
+    location : {
+        type : String
+    }
     },
     );
 

@@ -1,0 +1,396 @@
+.Profile {
+  margin: 6% 5% 0% 5%;
+  font-family: "Varela Round", sans-serif;
+  max-height: 89vh;
+  overflow-y: hidden;
+  padding-bottom: 7%;
+  margin-left: 16vw;
+}
+.backdrop {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/004/970/338/non_2x/abstract-glowing-blue-gradient-background-with-diagonal-stripe-lines-minimal-simple-backdrop-design-free-vector.jpg);
+  height: 10vh;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/004/970/338/non_2x/abstract-glowing-blue-gradient-background-with-diagonal-stripe-lines-minimal-simple-backdrop-design-free-vector.jpg);
+  height: 23vh;
+  z-index: -1;
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  top: -3%;
+  left: 0;
+}
+.Name {
+  color: white;
+  position: absolute;
+  top: 6vw;
+  left: 60vh;
+  font-size: 28px;
+}
+.Name > bold {
+  font-weight: bolder;
+}
+.avatar {
+  border-radius: 100%;
+  border: 1px solid white;
+  padding: 3px;
+  min-width: 10vw;
+  min-height: 10vw;
+
+  border-radius: 100%;
+  padding: 7px;
+  width: 10vw;
+  background: white;
+}
+.Profile > hr {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 18vh;
+  z-index: -1;
+  height: 3px;
+  background: #757575;
+}
+
+.banners {
+  display: flex;
+  margin-left: 26%;
+}
+.banner {
+  margin: 10px 30px;
+  margin: 10px 30px;
+  background: #141c44;
+  color: rgb(251 244 244 / 66%);
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px #11114240;
+  cursor: pointer;
+}
+.banner > img {
+  width: 14vw;
+  height: 8vw;
+  border-radius: 10px;
+  border-radius: 19px;
+  margin: 11px;
+}
+.bannerDesc {
+  padding: 10px;
+  cursor: pointer;
+}
+.banner:hover {
+  scale: 1.01;
+}
+.bannerTitle {
+  font-weight: 700;
+  font-size: 17px;
+  margin: 18px 0px 10px 2%;
+  color: #9e9e9e;
+  margin-left: 28%;
+  display: flex;
+  align-items: center;
+}
+.spacee1,
+.spacee2 {
+  display: flex;
+  justify-content: space-between;
+}
+.titlee,
+.spacee1 {
+  color: white;
+}
+.bannerDesc > div:nth-child(1),
+.bannerDesc > div:nth-child(2),
+.bannerDesc > div:nth-child(4) {
+  margin-bottom: 13px;
+}
+.bannerDesc > div:nth-child(1) {
+  padding: 6px 10px;
+  border-radius: 23px;
+  background: #ffffffea;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px 16px;
+  color: #444cb6;
+
+  font-size: smaller;
+  font-weight: 700;
+}
+.bannerDesc > div:nth-child(2),
+.bannerDesc > div:nth-child(3) {
+  font-weight: 800;
+}
+.Account {
+  top: 11vw;
+  position: absolute;
+  width: 19vw;
+  border-right: 5px solid lavender;
+  padding-right: 0%;
+  height: 75vh;
+  display: flex;
+  border-radius: 2%;
+  flex-direction: column;
+  justify-content: start;
+  cursor: pointer;
+  padding-top: 7vw;
+}
+.Details {
+  display: flex;
+  margin: 10px;
+  color: #1c4aae;
+  font-weight: 900;
+  font-size: 17px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.DetailsTitle {
+  color: black;
+  font-weight: normal;
+  width: 6vw;
+}
+.Bannerss {
+  height: 70vh;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.DetailsDesc {
+  background-color: #4772ce29;
+  color: #3949ab;
+  border-radius: 6px;
+  padding: 6px 19px;
+  font-weight: 100;
+}
+
+.Statss {
+  position: absolute;
+  top: 23%;
+  left: 38%;
+  display: flex;
+  justify-content: space-around;
+  width: 62vw;
+}
+.Stat1 {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  border: 2px solid rgb(167 167 219);
+  border: none;
+  width: 35vw;
+  height: 10vh;
+}
+.StatssRight {
+  margin-left: 10%;
+  font-weight: 700;
+}
+.StatssRight > div {
+  font-weight: 800;
+  font-size: 12px;
+  color: white;
+  color: rgb(136, 133, 133);
+}
+.view {
+  padding: 6px 10px;
+  border-radius: 23px;
+  background: #90a8eb69;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px 23px;
+  color: #444cb6;
+  margin-left: 65%;
+  font-size: smaller;
+}
+
+.styledTable {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 55vw;
+  max-width: 55vw;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  min-height: 50vh;
+  margin-left: 29%;
+  margin-bottom: 10%;
+}
+.styledTable thead tr {
+  background-color: #191e66;
+  color: #ffffff;
+  text-align: left;
+}
+.styledTable th,
+.styledTable td {
+  padding: 12px 15px;
+}
+.styledTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styledTable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styledTable tbody tr:last-of-type {
+  border-bottom: 2px solid #000098;
+}
+.styledTable tbody tr.active-row {
+  font-weight: bold;
+  color: #1048a8;
+}
+
+@media screen and (max-width: 850px) {
+  .Account {
+    top: 67vw;
+    position: absolute;
+    width: 75vw;
+    left: 15vw;
+    width: 75vw;
+    border-right: none;
+  }
+  .Name {
+    display: none;
+  }
+  .bannerTitle {
+    font-size: 14px;
+    /* margin-left: 9%; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0%;
+  }
+  .Details {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: -1%;
+    justify-content: flex-start;
+    align-items: normal;
+  }
+  .view {
+    margin-left: 0%;
+  }
+  .banners {
+    display: flex;
+    margin-left: 0%;
+    margin-left: 15vw;
+    flex-direction: column;
+    max-width: 73vw;
+  }
+  .banner > img {
+    width: 56vw;
+    height: 32vw;
+  }
+  .banner {
+    margin: 10px 8px;
+    box-shadow: none;
+  }
+  .Statss {
+    position: absolute;
+    top: 4%;
+    left: 11%;
+    width: 75vw;
+  }
+  .Profile {
+    font-family: "Varela Round", sans-serif;
+    height: 200vh;
+    overflow-y: scroll;
+
+    position: fixed; /****profile fixed to app*****/
+    margin: 0%;
+  }
+  .avatar {
+    border: 0px solid white;
+    min-width: 33vw;
+    min-height: 33vw;
+    border-radius: 100%;
+    padding: 6px;
+    margin-top: 38vw;
+    margin-left: 39vw;
+  }
+  hr {
+    display: none;
+  }
+  .Stat1 img {
+    width: 28px !important;
+  }
+  .backdrop {
+    height: 31vh;
+  }
+  .Stat1 {
+    display: block;
+  }
+  .Stat1 {
+    margin-right: 0%;
+    padding: 1px 13px;
+    border-radius: 20px;
+    font-size: 26px;
+    font-weight: 900;
+    width: 29vw;
+    height: 10vh;
+    color: white;
+    margin-top: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .StatssRight div {
+    font-size: 9px;
+    color: white;
+    margin: 10px 0px 3px 0px;
+  }
+  .StatssRight {
+    font-size: 12px;
+  }
+  .Bannerss {
+    height: 100vh;
+    overflow-y: scroll;
+    margin-top: 63vh;
+  }
+  .bannerDesc > div:nth-child(2),
+  .bannerDesc > div:nth-child(3) {
+    font-weight: 800;
+    font-size: 13px;
+  }
+  .bannerDesc > div:nth-child(1) {
+    padding: 6px 10px;
+    border-radius: 23px;
+    padding: 2px 12px;
+    font-size: 11px;
+  }
+  .bannerDesc > div:nth-child(4) {
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  .bannerDesc > div:nth-child(2) {
+    margin-bottom: 4px;
+  }
+  .styledTable {
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    min-width: 50vw;
+    max-width: 50vw;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    min-height: 50vh;
+    margin-left: 0%;
+    margin-bottom: 28%;
+  }
+  .styledTable th,
+  .styledTable td {
+    padding: 3px 8px;
+  }
+}
+
+.bannerTitles {
+  font-weight: 700;
+  font-size: 17px;
+  margin: -100px 0px 10px 2%;
+  color: #9e9e9e;
+  margin-left: 28%;
+  display: flex;
+  align-items: center;
+}

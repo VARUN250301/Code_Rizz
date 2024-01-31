@@ -1,0 +1,82 @@
+.exploreTitle {
+    margin: 30px 0px 20px 0px;
+    width: 100vw;
+    font-size: 30px;
+}
+.exploreTitle span{
+    color: rgb(78, 71, 71);
+    padding: 10px;
+    border-radius: 10px;
+}
+.carousel {
+    position: relative !important;
+    margin-left: 10.5vw !important;
+    margin-top: -5vw !important;
+}
+.carousel-inner {
+    position: relative;
+    width: 83% !important;
+    margin: auto !important;
+    overflow: hidden;
+    border-radius: 27px !important;
+    margin-top: 8%!important;
+    height: 36vh!important;
+}
+.carousel-control-prev {
+    left: 3vw !important;
+    opacity:1 !important;
+}
+.carousel-control-next {
+    right: 3vw !important;
+    opacity:1 !important;
+
+}
+.carousel-caption {
+    position: absolute;
+    /* right: 15%; */
+    top: 0rem;
+    left: 0% !important;
+    padding-top: 2.25rem;
+    padding-bottom: 0.25rem;
+    color: #fff;
+    text-align: center;
+    background: #ffffffa3;
+    width: 100%;
+    bottom:unset !important;
+    padding-top: 2.25rem !important;
+
+    top: -2vh !important;
+}
+
+
+
+@media only screen and (max-width: 1000px){
+    .carousel-inner {
+        height: 23vh!important;
+        width: 89vw !important;
+        margin-top: 3em !important;
+    }
+    .carousel {
+        position: relative !important;
+        margin-left: 2.5vw !important;
+    }
+    .navbar-logo {
+        display: none;
+    }
+    .carousel-caption {
+        padding-top: 20px !important;
+        padding-bottom: 0px !important;
+    }
+    .exploreTitle {
+        margin: 19px 0px 1rem 0px;
+        width: 100vw;
+        font-size: 17px;
+    }
+    .carousel-control-prev ,.carousel-control-next{
+        width: 10% !important;
+    }
+    .carousel-control-prev-icon,.carousel-control-next-icon {
+        display: inline-block;
+        width: 1rem !important;
+    }
+}

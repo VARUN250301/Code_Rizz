@@ -1,0 +1,64 @@
+.trends img {
+  width: 50%;
+  height: 50vh;
+  object-fit: cover;
+  justify-content: space-around;
+}
+.sty {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background: #ffffff;
+  padding: 0rem 0rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #222;
+}
+
+.sty h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(6, 6, 6);
+}
+.sty1 {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background: #ffffff;
+  padding: 0rem 0rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #222;
+}
+.sty1 h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(14, 14, 15);
+}
+.sty2 {
+  position: absolute;
+  top: 205%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background: #ffffff;
+  padding: 0rem 0rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #222;
+}
+.sty2 h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgb(1, 1, 22);
+}

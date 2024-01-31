@@ -1,0 +1,14 @@
+.chat {
+    margin-top: 53px;
+    
+    margin-left: 13vw;
+}
+
+.main {
+    display: flex;
+}
+
+.list, .eachChat {
+    display: flex;
+    flex-direction: column;
+}

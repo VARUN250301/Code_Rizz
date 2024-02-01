@@ -22,7 +22,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-logo"><i class="fa-solid fa-bars"></i>Sahayog </h1>
+        <h1 className="navbar-logo"><i class="fa-solid fa-bars"></i>कर्त्तव्य Path</h1>
         <hr/>
         <div className="menu-icons" onClick={()=>this.handleClick}>
           <i

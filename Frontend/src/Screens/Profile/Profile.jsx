@@ -107,12 +107,13 @@ const Profile = () => {
         <div className="backdrop"></div>
         <hr />
         <img
-          src="https://faceswapper.ai/images/sample/female-face-1.jpg"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kriti_Sanon_at_Adipurush_pre_release_event_%282%29_%28cropped%29.jpg/1200px-Kriti_Sanon_at_Adipurush_pre_release_event_%282%29_%28cropped%29.jpg"
           className="avatar"
         />
-        <div className="Name">
-          Good Afternoon, <bold>Kir!</bold>
+        <div className="Name" style={{ textAlign: 'left' }}>
+        Welcome, <strong>Kriti Sanon</strong>
         </div>
+
 
         <div className="Bannerss">
           <div className="bannerTitle">
@@ -272,12 +273,12 @@ const Profile = () => {
             ACCOUNT DETAILS
             <img
               style={{ width: "30px", marginLeft: "30%" }}
-              src="https://png.pngtree.com/png-clipart/20230924/original/pngtree-flat-ui-icon-of-a-horizontal-menu-with-three-dots-vector-png-image_12747613.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kriti_Sanon_at_Adipurush_pre_release_event_%282%29_%28cropped%29.jpg/1200px-Kriti_Sanon_at_Adipurush_pre_release_event_%282%29_%28cropped%29.jpg"
             />
           </div>
           <div className="Details">
             <div className="DetailsTitle">Email:</div>{" "}
-            <div className="DetailsDesc">kirT@gmail.com</div>
+            <div className="DetailsDesc">kriti19@gmail.com</div>
           </div>
           <div className="Details">
             <div className="DetailsTitle">Password:</div>{" "}
@@ -285,14 +286,14 @@ const Profile = () => {
           </div>
           <div className="Details">
             <div className="DetailsTitle">Name:</div>{" "}
-            <div className="DetailsDesc">Kir T.</div>
+            <div className="DetailsDesc">Kriti S.</div>
           </div>
           <div className="Details">
             <div className="DetailsTitle">Address:</div>{" "}
-            <div className="DetailsDesc">B/4, Oak Street</div>
+            <div className="DetailsDesc">Band Stand, Bandra-50</div>
           </div>
           <div className="Details">
-            <div className="DetailsTitle">Medical:</div>{" "}
+            <div className="DetailsTitle">Deloitte Event Handler</div>{" "}
             <div className="DetailsDesc">Click to see</div>
           </div>
         </div>

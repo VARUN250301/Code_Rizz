@@ -16,18 +16,20 @@
   background-color: white;
   background: #091241;
 }
-.selectedd a {
+.selectedd a{
   background: white !important;
   width: 13vw !important;
   border-radius: 10px !important;
   color: blue;
   margin-left: -46px !important;
 }
-hr {
+hr{
+    
   opacity: 1;
   height: 10px;
   width: 9vw;
   color: #8080804a;
+
 }
 .navbar-logo {
   color: white;
@@ -49,6 +51,7 @@ hr {
 }
 .nav-menu {
   margin: 3vh 0%;
+
 }
 .nav-links {
   text-decoration: none;
@@ -107,16 +110,16 @@ hr {
     padding: 7px 1px;
     margin: 1px 0.2rem;
   }
-  .TitleOfNav {
+  .TitleOfNav{
     display: none;
   }
-  ul {
+  ul{
     padding-left: 0px !important;
   }
   .selectedd a {
     background: white !important;
     width: 11vw !important;
-    border-radius: 0px 0px 11px 11px !important;
+    border-radius: 0px 0px 11px 11px!important;
     color: blue;
     height: 10vh !important;
     display: flex;
@@ -135,7 +138,7 @@ hr {
   .menu-icons {
     display: block;
     cursor: pointer;
-    display: none;
+    display:none;
   }
   .menu-icons i {
     font-size: 1.2rem;

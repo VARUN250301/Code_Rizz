@@ -9,7 +9,7 @@ export const useAuthListener = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       if (loggedInUser) {
-        setUser(loggedInUser.displayName);
+        setUser(loggedInUser.email);
       } else {
         setUser(null);
       }

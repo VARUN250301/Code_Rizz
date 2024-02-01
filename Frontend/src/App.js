@@ -17,7 +17,7 @@ import Map from "./Screens/Map/Maps";
 import UserLocation from "./Screens/Map/UserLocation";
 import AnnouncementForm from "./Screens/Channel/AnnouncementForm";
 import AnnouncementList from "./Screens/Channel/AnnouncementList";
-import AboutUs from "./Screens/Aboutus/AboutUs";
+import AboutUs from "./Screens/AboutUs/AboutUs";
 import  CSRComplianceEducation from "./Screens/Learn/CSRComplianceEducation";
 
 import Form from "./components/Company-Registration/Form";
@@ -81,7 +81,16 @@ function App() {
           <Route exact path="/AboutUs" element={<AboutUs />} />
           <Route exact path="/learn" element={<CSRComplianceEducation />} />
           <Route exact path="/registration" element={<Form />} />
-          <Route exact path="/cd" element={<CompanyDashboard />} />
+          <Route
+            exact
+            path="/cd"
+            element={
+              <div>
+                <Navbar />
+                <CompanyDashboard />
+              </div>
+            }
+          />
           <Route
             exact
             path="/channel"

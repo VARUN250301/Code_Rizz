@@ -1,154 +1,143 @@
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import Category from "../../components/Category/Category";
+import Popup from "reactjs-popup";
 import Trends from "../../components/Category/Trends";
 import slides from "../../mock.json";
 import Navbar from "../../components/Navbar/Navbar";
+import { useAuthListener } from "../../Screens/Home/CurrentUser";
+import { doc, collection, getDoc, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../firebase";
+import Modal from "../Community/Modal";
+import React, { useState, useEffect } from "react";
+import { addDoc, updateDoc, setDoc } from "firebase/firestore";
 
-const bannersData = [
-  {
-    title: "Childrens education",
-    desc: "",
-    complete: "40%",
-    expDate: "10",
-    org: "Safe Kids Worldwide",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
-  {
-    title: "Vaccine Drive",
-    desc: "",
-    complete: "60%",
-    expDate: "23",
-    org: "Donation City",
-    img: "https://hillrobinson.com/wp-content/uploads/2023/05/ChildVaccinated_UNF_Shotatlife_with-photo-credit-Resize-scaled.jpg",
-  },
-  {
-    title: "Clothes drive",
-    desc: "",
-    complete: "85%",
-    expDate: "06",
-    org: "Human Foundation",
-    img: "https://mymodernmet.com/wp/wp-content/uploads/2021/02/gmb-akash-children-in-school-17.jpg",
-  },
-  {
-    title: "Clothes drive",
-    desc: "",
-    complete: "85%",
-    expDate: "06",
-    org: "Human Foundation",
-    img: "https://mymodernmet.com/wp/wp-content/uploads/2021/02/gmb-akash-children-in-school-17.jpg",
-  },
-  {
-    title: "Clothes drive",
-    desc: "",
-    complete: "85%",
-    expDate: "06",
-    org: "Human Foundation",
-    img: "https://mymodernmet.com/wp/wp-content/uploads/2021/02/gmb-akash-children-in-school-17.jpg",
-  },
-  {
-    title: "Clothes drive",
-    desc: "",
-    complete: "85%",
-    expDate: "06",
-    org: "Human Foundation",
-    img: "https://mymodernmet.com/wp/wp-content/uploads/2021/02/gmb-akash-children-in-school-17.jpg",
-  },
-];
+const PopupForm = ({ onClose }) => {
+  // Define your form state and logic here
+  const [communityName, setCommunityName] = useState("");
+  const [communityAdd, setCommunityAdd] = useState("");
+  const [communityDet, setCommunityDet] = useState("");
+  const [formData, setFormData] = useState({
+    // communityName: "",
+    // communityAdd: "",
+    // communityDet: "",
+    // Your form fields and their initial values
+  });
+  const user = useAuthListener();
 
-const donatedData = [
-  {
-    title: "Food drive ",
-    desc: "",
-    complete: "20%",
-    expDate: "08",
-    org: "Hope Charity",
-    img: "https://images.unsplash.com/photo-1504159506876-f8338247a14a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNoYXJpdHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-  },
-  {
-    title: "School Supplies",
-    desc: "",
-    complete: "10%",
-    expDate: "42",
-    org: "Living Dreams",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAL6JiftJaq97lbItB1lBDeAtnZ47NRuFvdip5-3YdE0OgEO4vJ4koqYk2S3ZkREcp5hU&usqp=CAU",
-  },
-  {
-    title: "Childrens education",
-    desc: "",
-    complete: "40%",
-    expDate: "10",
-    org: "Safe Kids Worldwide",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTolrOl5szak8PpdtS81VfQYIE1v_r9C9bbcg&usqp=CAU",
-  },
-];
+  const handleJoinCommunity = async (e) => {
+    e.preventDefault();
+    try {
+      const communityData = {
+        name1: communityName,
+        location1: communityAdd,
+        details1: communityDet,
+      };
 
-const coreValue = [
-  {
-    Type: "Engage stakeholders",
-    Name: "Public-Private Partnerships (PPP) in Infrastructure",
-    About:
-      "Involves collaboration between the government and private sector stakeholders for infrastructure development.",
-    Metrics: "Number of infrastructure projects in collaboration",
-    PotentialImpactMetric:
-      "A 10% increase in the number of infrastructure projects in collaboration",
-    SuccessStory:
-      "PPP in Infrastructure saw a 10% increase in the number of successful collaborations, benefitting both public and private stakeholders.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
+      if (
+        communityName.trim() !== "" &&
+        communityAdd.trim() !== "" &&
+        communityDet.trim() !== ""
+      ) {
+        const channelRef = await addDoc(
+          collection(db, "Community"),
+          communityData
+        );
+      }
 
-  {
-    Type: "Engage stakeholders",
-    Name: "Public-Private Partnerships (PPP) in Infrastructure",
-    About:
-      "Involves collaboration between the government and private sector stakeholders for infrastructure development.",
-    Metrics: "Number of infrastructure projects in collaboration",
-    PotentialImpactMetric:
-      "A 10% increase in the number of infrastructure projects in collaboration",
-    SuccessStory:
-      "PPP in Infrastructure saw a 10% increase in the number of successful collaborations, benefitting both public and private stakeholders.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
+      await setDoc(
+        doc(db, `users/${user}/UserCreatedCommunity`, communityName),
+        {
+          communityData,
+        }
+      ).then(() => {
+        onClose();
+      });
 
-  {
-    Type: "Engage stakeholders",
-    Name: "Public-Private Partnerships (PPP) in Infrastructure",
-    About:
-      "Involves collaboration between the government and private sector stakeholders for infrastructure development.",
-    Metrics: "Number of infrastructure projects in collaboration",
-    PotentialImpactMetric:
-      "A 10% increase in the number of infrastructure projects in collaboration",
-    SuccessStory:
-      "PPP in Infrastructure saw a 10% increase in the number of successful collaborations, benefitting both public and private stakeholders.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
-  {
-    Type: "Engage stakeholders",
-    Name: "Public-Private Partnerships (PPP) in Infrastructure",
-    About:
-      "Involves collaboration between the government and private sector stakeholders for infrastructure development.",
-    Metrics: "Number of infrastructure projects in collaboration",
-    PotentialImpactMetric:
-      "A 10% increase in the number of infrastructure projects in collaboration",
-    SuccessStory:
-      "PPP in Infrastructure saw a 10% increase in the number of successful collaborations, benefitting both public and private stakeholders.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
-  {
-    Type: "Engage stakeholders",
-    Name: "Public-Private Partnerships (PPP) in Infrastructure",
-    About:
-      "Involves collaboration between the government and private sector stakeholders for infrastructure development.",
-    Metrics: "Number of infrastructure projects in collaboration",
-    PotentialImpactMetric:
-      "A 10% increase in the number of infrastructure projects in collaboration",
-    SuccessStory:
-      "PPP in Infrastructure saw a 10% increase in the number of successful collaborations, benefitting both public and private stakeholders.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU",
-  },
-];
+      // await setDoc(doc(db, `users/${user}/UserCreatedCommunity`, communityName), {
+      //   communityData,
+      // });
+
+      // await setDoc(doc(db, `community`, communityName), {
+      //   communityData,
+      // });
+      // const userRef = await addDoc(
+      //   communityName,
+      //   collection(db, "users/usersData/joinedCommunity"),
+      //   communityData
+      // );
+
+      //  onClose();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+};
 
 function Donation() {
+  const user = useAuthListener();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [initiatives, setInitiatives] = useState([]);
+  const [community, setCommunity] = useState([]);
+  const [isPopupOpenArray, setIsPopupOpenArray] = useState([]);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const openPopup = (index) => {
+    setIsPopupOpenArray((prev) => {
+      const newArray = [...prev];
+      newArray[index] = true;
+      return newArray;
+    });
+  }
+
+  const closePopup = (index) => {
+    setIsPopupOpenArray((prev) => {
+      const newArray = [...prev];
+      newArray[index] = false;
+      return newArray;
+    });
+  };
+
+  // useEffect(() => {
+  //   const ref = query(collection(db, `users/${user}`));
+  //   const unsubscribe = onSnapshot(ref, (querySnapshot) => {
+  //     const announcementsData = querySnapshot.docs.map((doc) => ({
+  //       id: doc.id,
+  //       ...doc.data(),
+  //     }));
+  //     setCommunity(announcementsData);
+  //   });
+
+  //   // return () => unsubscribe();
+  // }, [user]);
+
+  // const docRef = doc(db, "users", user);
+  // const docSnap = await getDoc(docRef);
+  // if (docSnap.exists()) {
+  //   console.log("Document data:", docSnap.data());
+  // } else {
+  //   // docSnap.data() will be undefined in this case
+  //   console.log("No such document!");
+  // }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/csr/initiatives");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setInitiatives(data);
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
       <Navbar />
@@ -162,38 +151,48 @@ function Donation() {
             className="banners row"
             style={{ marginLeft: "250px", width: "86vw" }}
           >
-            {coreValue.map((bd) => (
+            {initiatives.map((bd) => (
               <div className="col-md-4 mb-4">
-                <div className="banner">
-                  <img src={bd.img} />
-                  <div className="bannerDesc">
-                    <div>{bd.Type}</div>
-                    <div className="titlee">{bd.Name}</div>
-                    <div
-                      style={{
-                        textAlign: "start",
-                        color: "white",
-                      }}
-                    >
-                      <div>Metrics</div>
-                      <div style={{ fontWeight: "normal" }}>{bd.Metrics}</div>
-                      <div>PotentialImpactMetric</div>
-                      <div style={{ fontWeight: "normal" }}>
-                        {bd.PotentialImpactMetric}
+                <div>
+                  <div className="banner" onClick={openPopup}>
+                    <img
+                      src={
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECLqvE1Y2jzj36brUEv_gEk5SwF1IepoMOxcZ4n_9oB5U6xNuXZGwE3BIfJi-n6wVFL4&usqp=CAU"
+                      }
+                    />
+                    <div className="bannerDesc">
+                      <div>{bd.type}</div>
+                      <div className="titlee">{bd.name}</div>
+                      <div
+                        style={{
+                          textAlign: "start",
+                          color: "white",
+                        }}
+                      >
+                        <div>Metrics</div>
+                        <div style={{ fontWeight: "normal" }}>{bd.metrics}</div>
+                        <div>PotentialImpactMetric</div>
+                        <div style={{ fontWeight: "normal" }}>
+                          {bd.potenitalImpactMetric}
+                        </div>
                       </div>
-                    </div>
-                    <div className="spacee2">
-                      <div>Days left</div>
-                      <div>{"   "} Completed</div>
+                      <div className="spacee2">
+                        <div>Days left</div>
+                        <div>{"   "} Completed</div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <Popup open={isPopupOpen} onClose={closePopup}>
+                  <PopupForm onClose={closePopup} />
+                </Popup>
               </div>
             ))}
             <div></div>
           </div>{" "}
           <br />
         </div>
+        <Modal />
       </div>
     </div>
 

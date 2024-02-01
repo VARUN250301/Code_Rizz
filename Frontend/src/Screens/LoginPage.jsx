@@ -39,16 +39,7 @@ function Login() {
 
         const channelRef = await addDoc(collection(db, "users"), userData);
 
-        const userDocRef = doc(db, "users", user.displayName);
-
-        // Check if the user document already exists
-        const userDocSnapshot = await getDoc(userDocRef);
-
-        if (userDocSnapshot.coreValue.exists()) {
-          navigate("/home");
-        } else {
-          navigate("/registration");
-        }
+        navigate("/home");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
@@ -73,16 +64,12 @@ function Login() {
       await setDoc(doc(db, "users", user.email), {
         userData,
       });
-      const userDocRef = doc(db, "users", user.displayName);
+      // const userDocRef = doc(db, "users", user.displayName);
 
-      // Check if the user document already exists
-      const userDocSnapshot = await getDoc(userDocRef);
+      // // Check if the user document already exists
+      // const userDocSnapshot = await getDoc(userDocRef);
 
-      if (userDocSnapshot.coreValue) {
-        navigate("/home");
-      } else {
-        navigate("/registration");
-      }
+      navigate("/home");
     } catch (err) {
       console.error(err);
     }

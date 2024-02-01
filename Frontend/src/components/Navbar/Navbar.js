@@ -3,21 +3,18 @@ import { Component } from "react";
 import "./Navbarstyle.css";
 import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
-  
-
 
 class Navbar extends Component {
-  state = { clicked: false , selected:'Home'};
+  state = { clicked: false, selected: "Home" };
 
   handleClick = (e) => {
     this.setState({ clicked: !this.state.clicked });
   };
 
-  FnSelected= (title)=>{
-    console.log('ppp');
-    this.setState({selected:title})
-  }
- 
+  FnSelected = (title) => {
+    console.log("ppp");
+    this.setState({ selected: title });
+  };
 
   render() {
     return (
@@ -28,16 +25,19 @@ class Navbar extends Component {
           <i
             className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
-        </div> 
-  
+        </div>
+
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           {MenuItems &&
             MenuItems.map((item, index) => {
               return (
-                <li key={index}
-                    className={this.state.selected===item.title? "selectedd":''} 
-                    onClick={()=>this.FnSelected(item.title)}
-                    >
+                <li
+                  key={index}
+                  className={
+                    this.state.selected === item.title ? "selectedd" : ""
+                  }
+                  onClick={() => this.FnSelected(item.title)}
+                >
                   <Link className={item.cName} to={item.url}>
                     <i className={item.icon}></i>
                     <span className="TitleOfNav">{item.title}</span>

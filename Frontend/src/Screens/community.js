@@ -22,7 +22,7 @@ const Chat = () => {
             setChatClicked={setChatClicked}
           />
 
-          <Chats room={"123"} chatClicked={chatClicked} />
+          <Chats room={room} chatClicked={chatClicked} />
         </div>
       </div>
     </>

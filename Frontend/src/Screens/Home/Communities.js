@@ -66,7 +66,7 @@ function Communities({ data, setJoinedCommunities }) {
   return (
     <div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", width: "100vw" }}
+        style={{ display: "flex", flexWrap: "wrap", width: "80vw" }}
         className="communtiyy"
       >
         {data.map((agency, index) => (
@@ -87,9 +87,7 @@ function Communities({ data, setJoinedCommunities }) {
             </Card.Body>
           </Card>
         ))}
-        <Link to="/chat" className="gotocom">
-          Go to Community List <i class="fa-solid fa-arrow-right"></i>
-        </Link>
+        
       </div>
       <div>
         <img

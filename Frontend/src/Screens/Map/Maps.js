@@ -44,7 +44,7 @@ const NGOList = () => {
   const fetchNearbyNGOs = async () => {
     try {
       const response = await axios
-        .get("http://localhost:5000/api/ngos", {
+        .get("http://localhost:5001/api/ngos", {
           params: {
             location: "19.064758734526812, 72.8359567643951",
             radius: 500,
@@ -94,7 +94,7 @@ const NGOList = () => {
         <Navbar />
       </div>
       <div>
-        <h1 style={{ marginLeft: "-850px", paddingTop: "750px" }}>
+        <h1 style={{ marginLeft: "-850px", paddingTop: "1069px" }}>
           Near By NGO's
         </h1>
       </div>
@@ -103,7 +103,7 @@ const NGOList = () => {
         style={{
           position: "relative", // Ensure relative positioning
           marginLeft: "17vw",
-          marginTop: "10px",
+          marginTop: "60px",
         }}
       >
         <div style={{ display: "flex", flexWrap: "wrap" }}>

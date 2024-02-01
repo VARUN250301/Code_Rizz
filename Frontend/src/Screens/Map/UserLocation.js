@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import GoogleMap from "./GoogleMaps";
 
-const UserLocation = () => {
+const UserLocation = ({ cords }) => {
   const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
@@ -20,22 +20,24 @@ const UserLocation = () => {
     );
   }, []);
 
-  const nearbyNGOs = [
-    {
-      title: "NGO 1",
-      position: { lat: 19.067747107516638, lng: 72.8514929060159 },
-    },
-    {
-      title: "NGO 2",
-      position: { lat: 19.07763388009483, lng: 72.86019193508902 },
-    },
-    // Add more NGOs with their positions
-  ];
+  // const nearbyNGOs = [
+  //   {
+  //     title: "NGO 1",
+  //     position: { lat: lat, lng: lang },
+  //   },
+  //   {
+  //     title: "NGO 2",
+  //     position: { lat: 19.07763388009483, lng: 72.86019193508902 },
+  //   },
+  //   // Add more NGOs with their positions
+  // ];
 
+  const [nearbyNGOs, setnearbyNGOs] = useState([]);
+  console.log("cordsss", cords);
   return (
     <div>
       {userLocation ? (
-        <GoogleMap markers={nearbyNGOs} initialCenter={userLocation} />
+        <GoogleMap markers={cords} initialCenter={userLocation} />
       ) : (
         <p>Loading...</p>
       )}

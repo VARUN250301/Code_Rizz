@@ -10,7 +10,7 @@ const NGOList = () => {
   const [userLocation, setUserLocation] = useState();
   const [ratio, setRatio] = useState();
   const [lan, setLan] = useState();
-
+  const [cords, setCords] = useState([]);
   const rectangleStyle = {
     width: "80vw" /* Adjust the width as needed */,
     height: "90vh" /* Adjust the height as needed */,
@@ -41,41 +41,54 @@ const NGOList = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchNearbyNGOs = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/api/ngos", {
+  const fetchNearbyNGOs = async () => {
+    try {
+      const response = await axios
+        .get("http://localhost:5000/api/ngos", {
           params: {
-            location: "19.04787715022438, 72.90469371135369",
+            location: "19.064758734526812, 72.8359567643951",
             radius: 500,
             type: "point_of_interest",
             keyword: "ngo",
             key: "AIzaSyBmy2F0EtGGkSn-yEgVMfsjAQ-q3qZW49w",
           },
+        })
+        .then((data) => {
+          setCords([]);
+          console.log(data);
+          const arr = data.data.results;
+          setNgos(arr);
+          var coordinats = [];
+          arr.map((item) => {
+            const cord = {
+              title: item.name,
+              position: {
+                lat: item.geometry.location.lat,
+                lng: item.geometry.location.lng,
+              },
+            };
+
+            coordinats.push(cord);
+          });
+          setCords(coordinats);
+        })
+        .catch(() => {
+          console.log("error");
         });
+    } catch (error) {
+      console.error("Error fetching nearby NGOs:", error);
+    }
+  };
 
-        setNgos(response.data.results);
-        setRatio(ngos.map((ngo) => ngo.geometry.location.lat));
-
-        setLan(ngos.map((ngo) => ngo.geometry.location.lng));
-
-        console.log(ratio);
-        console.log("Lan Data");
-        console.log(lan);
-      } catch (error) {
-        console.error("Error fetching nearby NGOs:", error);
-      }
-    };
-
+  useEffect(() => {
     fetchNearbyNGOs();
   }, []);
 
   return (
     <div>
       <div style={{ position: "relative" }}>
-
         <div style={{ zIndex: "-1" }}>
-          <UserLocation />
+          <UserLocation cords={cords} />
         </div>
 
         <Navbar />

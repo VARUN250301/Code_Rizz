@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Category from "../../components/Category/Category";
 import Popup from "reactjs-popup";
@@ -76,6 +77,7 @@ const PopupForm = ({ onClose }) => {
 
 function Donation() {
   const user = useAuthListener();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [initiatives, setInitiatives] = useState([]);
   const [community, setCommunity] = useState([]);
@@ -88,7 +90,7 @@ function Donation() {
       newArray[index] = true;
       return newArray;
     });
-  }
+  };
 
   const closePopup = (index) => {
     setIsPopupOpenArray((prev) => {
@@ -138,6 +140,7 @@ function Donation() {
 
     fetchData();
   }, []);
+
   return (
     <div>
       <Navbar />
@@ -145,7 +148,7 @@ function Donation() {
         <div className="Bannerss">
           <div className="bannerTitle">
             YOUR CAMPAIGNS
-            <div className="view">View All {">"}</div>
+            <div className="view">Create your own initiatives</div>
           </div>
           <div
             className="banners row"

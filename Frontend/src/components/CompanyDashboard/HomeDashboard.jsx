@@ -48,7 +48,7 @@ const HomeDashboard = () => {
                 Kartavya Path making CSR initiatives efficient
               </p>
               <a
-                href="https://drive.google.com/file/d/1gZ2VX-Ow7jseEmyh_jio5oWgBPMimmEN/view?usp=sharing"
+                href="https://drive.google.com/file/d/11uFkD6SgR_OmVgy-7xeh3kMwgRdYzC9_/view?usp=sharing"
                 target="_blank"
               >
                 <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">

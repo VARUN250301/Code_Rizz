@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { skills } from "../../skills.js";
 import "./CompanyRegistrationForm.css"; // Import the CSS file
 import {
@@ -14,6 +15,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAuthListener } from "../../Screens/Home/CurrentUser.js";
 
 const CompanyRegistrationForm = () => {
+  const navigate = useNavigate();
   const user = useAuthListener();
   // State to manage form data
   const [formData, setFormData] = useState({
@@ -64,6 +66,7 @@ const CompanyRegistrationForm = () => {
     const csrfToken = "your_csrf_token_here";
     console.log("Form submitted with data:", formData);
     console.log("CSRF Token:", csrfToken);
+
     // const userRef = await addDoc(
     //   communityName,
     //   collection(db, "users/usersData/joinedCommunity"),
@@ -79,6 +82,7 @@ const CompanyRegistrationForm = () => {
     const csrfToken = "your_csrf_token_here";
     console.log("Form submitted with data:", formData);
     console.log("CSRF Token:", csrfToken);
+    navigate("/home");
   };
 
   return (

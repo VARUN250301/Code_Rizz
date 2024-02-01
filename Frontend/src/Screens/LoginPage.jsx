@@ -64,12 +64,16 @@ function Login() {
       await setDoc(doc(db, "users", user.email), {
         userData,
       });
-      // const userDocRef = doc(db, "users", user.displayName);
+      const userDocRef = doc(db, "users", user.displayName);
 
-      // // Check if the user document already exists
-      // const userDocSnapshot = await getDoc(userDocRef);
+      // Check if the user document already exists
+      const userDocSnapshot = await getDoc(userDocRef);
 
-      navigate("/home");
+      if (userDocSnapshot.coreValue) {
+        navigate("/home");
+      } else {
+        navigate("/registration");
+      }
     } catch (err) {
       console.error(err);
     }

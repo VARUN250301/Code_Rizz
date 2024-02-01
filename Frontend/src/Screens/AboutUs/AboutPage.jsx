@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import Navbar from '../../components/Navbar/Navbar';
 
-const AboutUs = () => {
+const AboutPage = () => {
   const toggleContent = (sectionId) => {
     const content = document.getElementById(sectionId);
     if (content.style.display === 'block') {
@@ -190,4 +190,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutPage;

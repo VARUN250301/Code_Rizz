@@ -23,15 +23,22 @@ export default function Navbar() {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span className="ml-3 text-xl">ReservedIn</span>
+          <span className="ml-3 text-xl">KartavyaPath NGO</span>
         </button>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center space-x-2">
+        <button
+            onClick={() => navigate("/applications")}
+            className="inline-flex items-center font-semibold text-white bg-indigo-600 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-700 rounded-md text-base mt-4 md:mt-0"
+          >
+            Applications to your initiatives
+          </button>
           <button
             onClick={() => navigate("/create")}
             className="inline-flex items-center font-semibold text-white bg-indigo-600 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-700 rounded-md text-base mt-4 md:mt-0"
           >
             Create
           </button>
+          
           <button
             onClick={logout}
             className="inline-flex items-center font-semibold text-white bg-indigo-600 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-700 rounded-md text-base mt-4 md:mt-0"

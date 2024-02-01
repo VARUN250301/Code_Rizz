@@ -54,6 +54,7 @@ export default function Home() {
                   Location:
                   <span className=" rounded-full bg-green-100 px-2 py-0.5 text-green-900">
                     {/* {jiob.location} */}
+                    {init.location}
                   </span>
                 </div>
                 {/* <div className>

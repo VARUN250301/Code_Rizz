@@ -1,25 +1,23 @@
 import { useLocation } from "react-router";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
-import { getUsers } from "../utils/backend";
+import {  getApplications } from "../utils/backend";
 
-export default function Job() {
+
+export default function Applications() {
   const location = useLocation();
-  const [users, setUsers] = useState([]);
+  const [applications, setapplications] = useState([]);
 
-  const job = location.state;
+
 
   useEffect(() => {
     console.log(location.state);
-    const fetchUsers = async () => {
-      // remove duplicate applicants
-      const applicants = [...new Set(job.applicants)];
-
-      const data = await getUsers(applicants);
+    const fetchapplications = async () => {
+      const data = await getApplications(localStorage.getItem("email"));
       console.log(data);
-      setUsers(data);
+      setapplications(data);
     };
-    fetchUsers();
+    fetchapplications();
   }, []);
 
   return (
@@ -27,7 +25,8 @@ export default function Job() {
       <Navbar />
       <div className="relative overflow-x-auto sm:rounded-lg w-3/4 mx-auto mt-10">
         <h1 className="text-xl mt-5">
-          Applicants for {job.position} @ {job.company}
+          {/* Applicants for {job.position} @ {job.company} */}
+          Initittives 
         </h1>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 mt-5 shadow-md ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-100  ">
@@ -42,37 +41,47 @@ export default function Job() {
                 Email
               </th>
               <th scope="col" className="px-6 py-3">
-                Skills
+                Initiative Type
               </th>
               <th scope="col" className="px-6 py-3">
-                Disablity Type
+                Inititative Id
               </th>
+              
+              
 
               <th scope="col" className="px-6 py-3">
-                <span className="sr-only">Notify</span>
+                Schedule
               </th>
+               <th scope="col" className="px-6 py-3">
+                Status
+              </th>
+
+
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {applications.map((application) => (
               <tr className="bg-white border-b   hover:bg-gray-50 ">
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                 >
-                  {user.name}
+                  {application.companyName}
                 </th>
-                <td className="px-6 py-4">{user.contact}</td>
-                <td className="px-6 py-4">{user.email}</td>
+                <td className="px-6 py-4">{application.companyPhone}</td>
+                <td className="px-6 py-4">{application.companyEmail}</td>
                 <td className="px-6 py-4">
-                  {user.skills.map((skill) => (
+                  {/* {application.sectors.map((skill) => (
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 mr-2">
                       {skill}
                     </span>
-                  ))}
+                  ))} */}
+
+                  {application.initiativeType}
                 </td>
                 <td className="px-6 py-4">
-                  {user.disabilityType.split("-").join(" ")}
+                  {/* {application.metric.split("-").join(" ")} */}
+                  {application.initiativeId}
                 </td>
 
                 <td className="px-6 py-4 text-right">
@@ -83,6 +92,11 @@ export default function Job() {
                   >
                     Schedule
                   </a>
+                </td>
+                <td className="px-6 py-4 text-right">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    {application.status}
+                  </span>
                 </td>
               </tr>
             ))}

@@ -181,7 +181,34 @@ app.get("/csr/initiatives", async (req, res) => {
   }
 }
 );
+const Applications = require("./model/applications");
 
+
+app.post('/applications/submit', async (req, res) => {
+  try {
+    const { companyName, companyEmail, coreValues, companyMission, companyAreaOfInterest, regionsToAquire, initiativeEmail, initiativeId, initiativeType } = req.body;
+    const application = await Applications.create({ companyName, companyEmail, coreValues, companyMission, companyAreaOfInterest, regionsToAquire, initiativeEmail, initiativeId, initiativeType });
+    res.status(201).json(application);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Something went wrong");
+  }
+}
+);
+
+
+app.post("/applications/ownapplications/", async (req, res) => {
+  const { email } = req.body;
+  try {
+    const applications = await Applications.find({
+        initiativeEmail: email,
+    });
+    res.status(200).json(applications);
+  } catch (error) {
+    res.status(500).send("Something went wrong");
+  }
+}
+);
 
 module.exports = app;
 

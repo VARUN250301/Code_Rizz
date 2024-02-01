@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./screens/Home";
 import Create from "./screens/Create";
-import Job from "./screens/Job";
+import Applications from "./screens/Applications";
 import { useAuthContext } from "./context/AuthProvider";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
@@ -18,8 +18,8 @@ export default function App() {
       element: <Create />,
     },
     {
-      path: "/job",
-      element: <Job />,
+      path: "/applications",
+      element: <Applications />,
     },
     {
       path: "/register",

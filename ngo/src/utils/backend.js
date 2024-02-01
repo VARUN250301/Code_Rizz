@@ -71,3 +71,15 @@ export async function getUsers(userIds) {
     console.log(error);
   }
 }
+
+export async function getApplications(email) {
+  try {
+    const res = await axios.post("/applications/ownapplications/",{ email});
+    console.log(email);
+    console.log("Hell");
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+
+}

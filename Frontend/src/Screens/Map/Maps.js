@@ -50,7 +50,6 @@ const NGOList = () => {
             radius: 500,
             type: "point_of_interest",
             keyword: "ngo",
-            key: "AIzaSyBmy2F0EtGGkSn-yEgVMfsjAQ-q3qZW49w",
           },
         })
         .then((data) => {
